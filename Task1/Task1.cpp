@@ -1,7 +1,9 @@
 ﻿#include <iostream>
+#include <stdexcept>
 
 class bad_length : public std::exception {
-    virtual const char* what() const throw() {
+public:
+    virtual const char* what() const override {
         return "Вы ввели слово запретной длины!";
     }
 };
@@ -29,8 +31,12 @@ int main()
             int len = function(word, forbidden_length);
             std::cout << "Длина слова \"" << word << "\" равна " << len << std::endl;
         }
-        catch (const std::exception& e) {
+        catch (const bad_length& e) {
             std::cout << e.what() << " До свидания" << std::endl;
+            return 0;
+        }
+        catch (...) {
+            std::cout << "Неизвестная ошибка" << std::endl;
             return 0;
         }
     }

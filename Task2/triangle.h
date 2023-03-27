@@ -1,5 +1,6 @@
 #pragma once
 #include "Figure.h"
+#include "shapeCreationError.h"
 
 class Triangle : public Figure {
 protected:

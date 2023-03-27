@@ -1,4 +1,5 @@
 #include "Quadrilateral.h"
+#include "shapeCreationError.h"
 #include <iostream>
 
 Quadrilateral::Quadrilateral(int a, int b, int c, int d, int A, int B, int C, int D) {
@@ -11,6 +12,9 @@ Quadrilateral::Quadrilateral(int a, int b, int c, int d, int A, int B, int C, in
     B_ = B;
     C_ = C;
     D_ = D;
+    if (a != 0 && b != 0 && c != 0 && d!=0) sides_count = 4;
+    if ((A + B + C + D) != 360) throw ShapeCreationError("сумма углов не равна 360");
+    if (sides_count != 4) throw ShapeCreationError("количество сторон не равно 4");
 }
 
 int Quadrilateral::get_a() {
@@ -48,6 +52,6 @@ int Quadrilateral::get_D() {
 void Quadrilateral::print_info() {
     Figure::print_info();
 
-    std::cout << "Стороны: " << "a = " << get_a() << ", b = " << get_b() << ", с = " << get_c() << ", d = " << get_d()
-        << "\nУглы: " << "А = " << get_A() << ", В = " << get_B() << ", С = " << get_C() << ", D = " << get_D() << std::endl;
+    std::cout << "(стороны: " << get_a() << ", " << get_b() << ", " << get_c() << ", " << get_d()
+        << "; углы: " << get_A() << ", " << get_B() << ", " << get_C() << ", " << get_D() << ") создан\n";
 }

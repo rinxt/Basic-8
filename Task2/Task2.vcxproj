@@ -129,7 +129,7 @@
   <ItemGroup>
     <ClCompile Include="equilateralTriangle.cpp" />
     <ClCompile Include="figure.cpp" />
-    <ClCompile Include="invalidShapeException.cpp" />
+    <ClCompile Include="shapeCreationError.cpp" />
     <ClCompile Include="isoscelesTriangle.cpp" />
     <ClCompile Include="parallelogram.cpp" />
     <ClCompile Include="quadrilateral.cpp" />
@@ -143,7 +143,7 @@
   <ItemGroup>
     <ClInclude Include="equilateralTriangle.h" />
     <ClInclude Include="figure.h" />
-    <ClInclude Include="invalidShapeException.h" />
+    <ClInclude Include="shapeCreationError.h" />
     <ClInclude Include="isoscelesTriangle.h" />
     <ClInclude Include="parallelogram.h" />
     <ClInclude Include="quadrilateral.h" />

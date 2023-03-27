@@ -6,5 +6,5 @@ std::string Figure::get_name() {
 }
 
 void Figure::print_info() {
-    std::cout << "\n" << name_ << ":\n";
+    std::cout << "\n" << name_ << " ";
 }
